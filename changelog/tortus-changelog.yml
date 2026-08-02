@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai/changelog
+scheme: semver
+current_version: 1.6.0
+subject: TORTUS Embed SDK (@tortus-ai/embed-client)
+entries:
+  - version: 1.6.0
+    date: '2026-06-18'
+    additions:
+      - "Meeting mode support (tortus.meetings.start) with LIVE_RECORDING and AUDIO_FILE modes"
+      - "TortusMeeting object with setAudio(), setNotes(), close()"
+      - "Meeting lifecycle events (meeting:started/resumed/updated/closed/cancelled/completed)"
+      - "disableFinishMeetingButton config option"
+    deprecations:
+      - "Dictation API (client.dictations.start, TortusDictation, dictation:* events) deprecated; always rejects CLIENT_4001; to be removed"
+    breaking: false
+  - version: 1.5.0
+    date: '2026-04-01'
+    additions:
+      - "consultation:resumed event"
+      - "completedAt and createdAt fields on consultation data"
+    highlights:
+      - "Reliable consultation data after client restart"
+    breaking: false
+  - version: 1.4.0
+    date: '2026-03-03'
+    additions:
+      - "transcriptions array in consultation:completed result artifacts (text/plain)"
+    breaking: false
+  - version: 1.3.0
+    date: '2026-03-03'
+    additions:
+      - "CUSTOM integration system with required label"
+      - "Optional label for known integration systems (EMIS, SYSTM_ONE, MEDICUS, CERNER)"
+      - "Branded error screen on initialisation failure"
+      - "EMBED_7007 error code for client-secrets fetch failures"
+    changes:
+      - "APP_READY initialisation timeout increased from 30s to 120s"
+    breaking: false
+  - version: 1.2.1
+    date: '2026-02-26'
+    additions:
+      - "customFields support persisted to encounter record"
+      - "customFields validation (pre-configured fields only)"
+      - "EMBED_7006 error code (Invalid embed configuration)"
+    fixes:
+      - "MedicalCode fields aligned to FHIR conventions (code/display); id/description deprecated"
+      - "consultation.close() fires consultation:closed exactly once"
+    breaking: false

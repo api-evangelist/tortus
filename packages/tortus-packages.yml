@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai/installation
+notes: >-
+  The TORTUS Embed SDK is published to GitHub Packages (npm.pkg.github.com)
+  under the @tortus-ai scope, not the public npm registry. Installation requires
+  a GitHub Personal Access Token with read:packages. TORTUS can also supply an
+  npm-importable package file on request (support@tortus.ai).
+packages:
+  - language: typescript
+    registry: github-packages
+    name: "@tortus-ai/embed-client"
+    url: https://docs.tortus.ai/installation
+    install: npm install @tortus-ai/embed-client
+    registry_config: "@tortus-ai:registry=https://npm.pkg.github.com"
+    official: true
+    description: >-
+      Official TypeScript client for embedding AI-powered medical consultations
+      (ambient voice capture, clinical documentation, coding, meetings) into a
+      healthcare application via a sandboxed iframe. Exposes loadTortus(),
+      client.consultations, client.meetings, and a lifecycle event API. Full
+      TypeScript definitions for every option, event, and result.

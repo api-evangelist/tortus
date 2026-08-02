@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/* on TORTUS hosts
+host: https://tortus.ai
+notes: >-
+  No RFC-style discovery documents are published. trust.tortus.ai serves a
+  Vanta-hosted Trust Center (HTML, not an RFC 9116 security.txt); see
+  security/tortus-trust-center.yml. The API host api.tortus.ai does not respond
+  to unauthenticated root/discovery requests.
+documents:
+  - path: /.well-known/security.txt
+    host: https://tortus.ai
+    status: 404
+  - path: /.well-known/openid-configuration
+    host: https://tortus.ai
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    host: https://tortus.ai
+    status: 404
+  - path: /.well-known/api-catalog
+    host: https://tortus.ai
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    host: https://tortus.ai
+    status: 404
+  - path: /llms.txt
+    host: https://tortus.ai
+    status: 404
+  - path: /llms.txt
+    host: https://docs.tortus.ai
+    status: 200
+    note: LLMs index for the Embed SDK docs (saved as llms/tortus-llms.txt)
+  - path: /.well-known/security.txt
+    host: https://docs.tortus.ai
+    status: 404

@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai + https://tortus.ai + https://trust.tortus.ai
+standards:
+  - id: fhir
+    conforms: partial
+    evidence: >-
+      Medical codes returned in consultation:completed events use FHIR Coding
+      conventions (code + display primary fields, aligned with FHIR Coding as of
+      SDK v1.2.1). Not a full FHIR API surface.
+  - id: http-basic-auth
+    conforms: true
+    evidence: >-
+      Launch endpoint POST https://api.tortus.ai/v1/oauth/launch authenticates
+      with HTTP Basic Authentication (clientId:clientSecret).
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      Endpoint path is /v1/oauth/launch but the documented mechanism is HTTP
+      Basic credential exchange for a short-lived launch token, not an OAuth 2.0
+      grant flow.
+  - id: iso-27001
+    conforms: true
+    evidence: ISO 27001 certified (Trust Center + homepage).
+  - id: iso-13485
+    conforms: true
+    evidence: ISO 13485 (medical device quality management) certified.
+  - id: cyber-essentials-plus
+    conforms: true
+    evidence: Cyber Essentials Plus certified.
+  - id: ukca-class-iia
+    conforms: true
+    evidence: UKCA Class IIa Medical Device certification.
+  - id: nhs-dtac
+    conforms: true
+    evidence: NHS Digital Technology Assessment Criteria (DTAC) compliant.
+  - id: dspt
+    conforms: true
+    evidence: NHS Data Security and Protection Toolkit standards exceeded.

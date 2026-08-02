@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai/quickstart + https://docs.tortus.ai/authentication
+environments:
+  - name: sandbox
+    api_host: https://api.staging.tortus.ai
+    selector: 'loadTortus({ environment: "sandbox" })'
+  - name: production
+    api_host: https://api.tortus.ai
+    selector: 'loadTortus({ environment: "production" })'
+credentials:
+  publishable_key:
+    prefix: "pk_"
+    exposure: frontend-safe
+    example_form: "pk_your_key_here"
+  client_id:
+    prefix: "cli_"
+    exposure: backend-only
+  client_secret:
+    prefix: "sec_"
+    exposure: backend-only
+launch_token:
+  ttl_seconds: 300
+  minted_at: "POST https://api.tortus.ai/v1/oauth/launch"
+notes: >-
+  The environment must be specified explicitly in loadTortus(). Sandbox connects
+  to api.staging.tortus.ai; switch environment to "production" to go live.
+  Credentials (publishable key, client ID, client secret) are provisioned by
+  TORTUS on request (support@tortus.ai) — no self-serve signup is published, and
+  no magic/test patient values are documented. No verbatim test values are
+  invented here.

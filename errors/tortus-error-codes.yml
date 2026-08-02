@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai (changelog + guides)
+envelope: >-
+  Errors surface as coded errors on the consultation:error event and, on
+  loadTortus() initialisation failure, via a branded error screen that displays
+  the error code for support.
+error_codes:
+  - code: EMBED_7006
+    title: Invalid embed configuration
+    cause: >-
+      Embed-specific configuration issue, e.g. using customFields that have not
+      been pre-configured for the organisation.
+    since: v1.2.1
+  - code: EMBED_7007
+    title: Client-secrets fetch failure
+    cause: >-
+      The fetchClientSecrets() callback failed to return credentials, making the
+      integrator-side issue easier to identify.
+    since: v1.3.0
+  - code: CLIENT_4001
+    title: Dictation not yet implemented
+    cause: >-
+      client.dictations.start() is deprecated; the iframe-side handler is not
+      implemented and the call always rejects with this code.
+    since: v1.6.0
+notes: >-
+  Additional per-error codes are shown on the initialisation error screen for
+  support. This registry captures the codes documented in the public changelog
+  and guides; it is not a payments decline-code list.

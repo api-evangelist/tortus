@@ -1,0 +1,64 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai
+scope: TORTUS Embed SDK (@tortus-ai/embed-client)
+authentication:
+  style: >-
+    Backend HTTP Basic (client ID + secret) mints a short-lived launch token;
+    frontend uses a publishable key (pk_...) + the launch token. See
+    authentication/tortus-authentication.yml.
+  token_ttl_seconds: 300
+environments:
+  values: [production, sandbox]
+  selector: loadTortus({ environment }) — must be specified explicitly
+  hosts:
+    production: https://api.tortus.ai
+    sandbox: https://api.staging.tortus.ai
+idempotency:
+  supported: false
+  notes: No idempotency-key contract is documented for the Embed SDK.
+event_model:
+  style: client-side pub/sub via client.on(event, callback)
+  consultation_events:
+    - consultation:started
+    - consultation:resumed
+    - consultation:completed
+    - consultation:error
+    - consultation:cancelled
+    - consultation:closed
+  meeting_events:
+    - meeting:started
+    - meeting:resumed
+    - meeting:updated
+    - meeting:completed
+    - meeting:cancelled
+    - meeting:closed
+  result_artifacts: [medicalNotes, letters, medicalCodes, transcriptions]
+  artifact_filtering: >-
+    Filter result artifacts by contentType rather than relying on array order.
+references:
+  cross_system_id: >-
+    Each consultation/meeting carries a `reference` (cross-system identifier,
+    auto-generated if omitted) for correlating with host records.
+  user_resume: >-
+    userId is the resume/lookup key; store the returned user_id and resend it on
+    every launch or a new user is created. externalUserId is a label only, not a
+    lookup key.
+medical_coding:
+  convention: >-
+    MedicalCode fields use FHIR Coding conventions (code + display primary
+    fields); legacy id + description are deprecated but retained for backward
+    compatibility.
+messaging_security: >-
+  Host <-> embedded iframe communication uses secure postMessage with origin
+  validation; strict referrer policy and sandboxed iframe permissions.
+error_envelope:
+  style: >-
+    Errors surface as coded errors (e.g. EMBED_7006, EMBED_7007, CLIENT_4001)
+    on the consultation:error event and via a branded initialisation error
+    screen. See errors/tortus-error-codes.yml.
+cross_links:
+  authentication: authentication/tortus-authentication.yml
+  errors: errors/tortus-error-codes.yml
+  changelog: changelog/tortus-changelog.yml
+  sandbox: sandbox/tortus-sandbox.yml

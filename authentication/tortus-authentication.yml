@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai/authentication
+docs: https://docs.tortus.ai/authentication
+summary:
+  types: [http-basic, publishable-key, launch-token]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: launchEndpointBasicAuth
+    type: http
+    scheme: basic
+    location: "POST https://api.tortus.ai/v1/oauth/launch (server-side only)"
+    description: >-
+      Your backend authenticates to the TORTUS launch endpoint with HTTP Basic
+      Authentication: username = client ID (e.g. cli_abc123xyz), password =
+      client secret (e.g. sec_def456uvw), base64-encoded as clientId:clientSecret
+      in the Authorization header. Never expose the client ID/secret to the
+      frontend.
+  - name: publishableKey
+    type: apiKey
+    in: config
+    parameter: publishableKey
+    description: >-
+      Public identifier (pk_...) passed to loadTortus() in the browser to
+      identify the tenant. Safe to expose to the frontend.
+  - name: launchToken
+    type: http
+    scheme: bearer
+    description: >-
+      Short-lived launch token minted by the launch endpoint and returned to the
+      SDK via the fetchClientSecrets() callback. The SDK exchanges it to load and
+      authenticate the embedded app. Tokens expire after 5 minutes and must be
+      requested fresh per session.
+environments:
+  production: https://api.tortus.ai
+  sandbox: https://api.staging.tortus.ai

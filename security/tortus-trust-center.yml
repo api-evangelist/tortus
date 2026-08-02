@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://trust.tortus.ai
+probe: true
+url: https://trust.tortus.ai/
+platform: Vanta Trust Center
+certifications:
+  - ISO 27001
+  - ISO 13485
+  - Cyber Essentials Plus
+  - UKCA Class IIa Medical Device
+compliance_programs:
+  - NHS DTAC (Digital Technology Assessment Criteria) compliant
+  - DSPT (Data Security and Protection Toolkit) standards exceeded
+evidence:
+  - source: https://trust.tortus.ai/
+    keywords: [trust center, security, compliance, vanta]
+  - source: https://tortus.ai/
+    keywords: [ISO 13485, ISO 27001, Cyber Essentials Plus, UKCA Class IIa, NHS DTAC, DSPT]
+notes: >-
+  TORTUS operates a Vanta-hosted Trust Center at trust.tortus.ai. Certifications
+  and compliance posture are additionally stated on the tortus.ai homepage as a
+  UKCA Class IIa medical device with ISO 13485, ISO 27001, Cyber Essentials Plus,
+  NHS DTAC compliance, and DSPT.

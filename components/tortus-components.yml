@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tortus.ai
+loaders:
+  - name: "@tortus-ai/embed-client"
+    type: typescript-embed-sdk
+    entry: loadTortus(config)
+    registry: github-packages
+    url: https://docs.tortus.ai/reference/api
+components:
+  - family: Embedded Consultation Client
+    kind: sandboxed-iframe
+    mount: loadTortus({ container, publishableKey, environment, fetchClientSecrets })
+    surfaces:
+      - screen: standby
+      - screen: home
+    capabilities:
+      - Ambient voice capture and speaker diarization
+      - Automated clinical documentation (notes, letters, referrals)
+      - AI-suggested medical coding
+      - EHR "Approve & Save to ..." action (EMIS, SYSTM_ONE, MEDICUS, CERNER, CUSTOM)
+    apis:
+      - client.display(screen)
+      - client.consultations.start(consultation, options)
+      - client.meetings.start(meeting, options)
+      - client.on(event, callback)
+      - client.destroy()
+    notes: >-
+      Communication between the host app and the embedded experience uses secure
+      postMessage with origin validation; sandboxed iframe permissions and a
+      strict referrer policy protect PHI. Data is stored encrypted on-device.

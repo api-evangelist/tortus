@@ -1,0 +1,16 @@
+# TORTUS Embed SDK
+
+## Docs
+
+- [Authentication](https://docs.tortus.ai/authentication.md): Mint short-lived launch tokens on your backend to authenticate the SDK.
+- [Changelog](https://docs.tortus.ai/changelog.md)
+- [How it works](https://docs.tortus.ai/concepts.md): The mental model behind the embedded TORTUS client.
+- [Configuration](https://docs.tortus.ai/configuration.md): Every option the loadTortus() function accepts.
+- [Consultations](https://docs.tortus.ai/guides/consultations.md): Start consultations across audio, face-to-face, and live recording modes.
+- [Handling events & results](https://docs.tortus.ai/guides/events-and-results.md): Subscribe to the consultation lifecycle and read the generated artifacts.
+- [Meetings](https://docs.tortus.ai/guides/meetings.md): Capture non-patient conversations and generate meeting notes.
+- [Introduction](https://docs.tortus.ai/index.md): Embed AI-powered medical consultations into your healthcare application with the TORTUS Embed SDK.
+- [Installation](https://docs.tortus.ai/installation.md): Configure the registry and install the TORTUS Embed SDK.
+- [Quickstart](https://docs.tortus.ai/quickstart.md): Embed TORTUS and run your first consultation in a few minutes.
+- [API reference](https://docs.tortus.ai/reference/api.md): Every method, option, and event in the TORTUS Embed SDK.
+- [Security & support](https://docs.tortus.ai/reference/security.md): Security model, browser support, and licensing for the TORTUS Embed SDK.
