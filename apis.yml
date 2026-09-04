@@ -33,15 +33,17 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  - sandbox
+  generated: '2026-09-03'
   method: derived
 image: https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0dbb3f54-9b72-4a98-8408-b287decae2b3/id-preview-17c5b15e--d126be98-e1f2-44fe-a8b2-bc92ca2cb3f8.lovable.app-1780992136068.png
 specificationVersion: '0.23'
